@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+:root {
+  /* COLORS */
+  /* Primary */
+  --bg-body: hsl(233, 47%, 7%);
+  --bg-main: hsl(244, 38%, 16%);
+  --violet: hsl(277, 64%, 61%);
+  /* TXT */
+  --white: hsl(0, 0%, 100%);
+  --paragraphe: hsla(0, 0%, 100%, 0.75);
+  --stats: hsla(0, 0%, 100%, 0.6);
+
+  /* FONTS */
+  --ff-main: "Inter", sans-serif;
+  --ff-stats: "Lexend Deca", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+  font-family: var(--ff-main);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-body);
+  color: var(--white);
+  display: grid;
+  place-content: center;
+}
+
+main {
+  background-color: var(--bg-main);
+  display: grid;
+  max-width: 1110px;
+  grid-template-columns: auto auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+/* Text */
+
+.text {
+  padding: 70px 122px 70px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.txt h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.txt h2 span {
+  color: var(--violet);
+}
+
+.txt p {
+  color: var(--paragraphe);
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 167%;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  gap: 64px;
+}
+
+.a-stat p {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.a-stat h4 {
+  font-family: var(--ff-stats);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--stats);
+}
+
+/* IMAGE  */
+.image {
+  width: 540px;
+  height: 466px;
+  position: relative;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: var(--violet);
+}
+
+.overlay {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--violet);
+  mix-blend-mode: multiply;
+}
+
+/* MEDIA QUERRY */
+
+@media screen and (max-width: 1110px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: auto;
+    max-width: 540px;
+    margin: 24px;
+  }
+  .image {
+    order: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .text {
+    order: 1;
+    padding: 46px 34px 36px;
+    gap: 45px;
+  }
+
+  .text * {
+    text-align: center;
+  }
+  .txt h2 {
+    font-size: 28px;
+    margin-bottom: 22px;
+  }
+  .stats {
+    justify-content: center;
+    gap: 38px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .stats {
+    flex-direction: column;
+  }
+}
